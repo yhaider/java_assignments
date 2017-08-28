@@ -1,2 +1,6 @@
-java_fundamentals/helloworld.class
-java_fundamentals/FirstJavaProgram.class
+java_fundamentals/helloWorld/helloworld.class
+java_fundamentals/firstProgram/FirstJavaProgram.class
+java_fundamentals/importDemo/ImportDemo.class
+java_fundamentals/importDemo/ImportDemoTest.class
+java_fundamentals/pythagoreanTheorem/Pythagorean.class
+java_fundamentals/pythagoreanTheorem/PythagoreanTest.class
