@@ -135,18 +135,18 @@ public class PuzzleJava {
     // Returns an array of ten random strings with 5 characters
 
     public static void main(String[] args){
-        ArrayList<Integer> sumarr = sumArr();
-
-        ArrayList<String> orgnamesarr = orgNames();
-
-        shuffleAlphabet();
-
-        int[] randarr = randArr();
-
-        int[] sortedrandarr = sortedRandArr();
-
-        String randstr = randStr();
-
-        String[] randstrArr = randStrArr();
+        // ArrayList<Integer> sumarr = sumArr();
+        //
+        // ArrayList<String> orgnamesarr = orgNames();
+        //
+        // shuffleAlphabet();
+        //
+        // int[] randarr = randArr();
+        //
+        // int[] sortedrandarr = sortedRandArr();
+        //
+        // String randstr = randStr();
+        //
+        // String[] randstrArr = randStrArr();
     }
 }
