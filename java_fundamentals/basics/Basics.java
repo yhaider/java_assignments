@@ -53,7 +53,7 @@ public class Basics{
     }
 
     public void oddArray(){
-        ArrayList<Integer> newarr = new ArrayList();
+        ArrayList<Integer> newarr = new ArrayList<Integer>();
         for(int i = 1; i <= 255; i++){
             if(i % 2 != 0){
                 newarr.add(i);
