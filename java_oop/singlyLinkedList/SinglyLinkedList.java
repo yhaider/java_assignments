@@ -1,4 +1,3 @@
-
 public class SinglyLinkedList {
     private Node head;
 
