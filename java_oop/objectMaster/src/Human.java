@@ -10,15 +10,15 @@ public class Human {
 	public Human() {
 		this.health = 100;
 		this.strength = 3;
-		this.intelligence = 3;
-		this.stealth = 3;
+		this.setIntelligence(3);
+		this.setStealth(3);
 	}
 	public Human(String name) {
 		this.name = name;
 		this.health = 100;
 		this.strength = 3;
-		this.intelligence = 3;
-		this.stealth = 3;
+		this.setIntelligence(3);
+		this.setStealth(3);
 	}
 	// Constructors
 	
@@ -35,7 +35,25 @@ public class Human {
 	public void setHealth(int health) {
 		this.health = health;
 	}
-	// Getter and setter methods for health and name
+	public int getIntelligence() {
+		return intelligence;
+	}
+	public void setIntelligence(int intelligence) {
+		this.intelligence = intelligence;
+	}
+	public int getStealth() {
+		return stealth;
+	}
+	public void setStealth(int stealth) {
+		this.stealth = stealth;
+	}
+	public int getStrength() {
+		return strength;
+	}
+	public void setStrength(int strength) {
+		this.strength = strength;
+	}
+	// Getter and setter methods for attributes
 	
 	
 	public void attack(Human human) {
@@ -57,6 +75,8 @@ public class Human {
 	// Attacking a human will lead to a message based on existence 
 	// of a name and a decrease in the attacked human's health by 
 	// the attacker's strength
+	
+	
 	
 	
 	
