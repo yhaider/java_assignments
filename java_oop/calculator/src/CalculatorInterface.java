@@ -1,4 +1,5 @@
 
 public interface CalculatorInterface {
-	// TO DO
+	void performOperation();
+	double getResults();
 }
