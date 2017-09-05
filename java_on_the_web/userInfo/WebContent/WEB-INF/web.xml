@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
-    <display-name>HelloWorld</display-name>
-    <description>Hello World application</description>
+    <display-name>UserInfo</display-name>
+    <description>User Info application</description>
     <servlet>
         <servlet-name>Home</servlet-name>
-        <servlet-class>com.yasmeenhaider.web.Home</servlet-class>
+        <servlet-class>com.yasmeenhaider.userinfo.Home</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>Home</servlet-name>
