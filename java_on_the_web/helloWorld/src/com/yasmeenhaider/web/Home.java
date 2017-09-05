@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class Home
  */
-//@WebServlet("/Home")
+@WebServlet("/Home")
 public class Home extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -24,11 +24,11 @@ public class Home extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// Sets the content type of the response
-        response.setContentType("text/html");
-        // writes the response
-        PrintWriter out = response.getWriter();
-        out.write("<h1>Hello World</h1>");
+		// Gets value from query params
+		String userName = request.getParameter("name");
+		response.setContentType("text/html");
+		PrintWriter out = response.getWriter();
+		out.write("<h1>Hello World, from " + userName + "</h1>");
 		
 	}
 
