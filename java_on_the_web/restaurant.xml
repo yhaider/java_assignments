@@ -1,0 +1,44 @@
+<!-- The purpose of this assignment is to get familiar with XML.
+    It involves creating a restaurant menu for breakfast and dinner. -->
+<?xml version="1.0" encoding="UTF-8"?>
+<restaurantMenu>
+    <menu category="breakfast">
+        <item category="entree">
+            <name>Eggs and Toast</name>
+            <description>Two eggs to order and toast</description>
+            <price>$6.99</price>
+        </item>
+        <item category="entree">
+            <name>Pancakes</name>
+            <description>4 buttermilk pancakes</description>
+            <price>$9.99</price>
+        </item>
+        <item category="beverage">
+            <name>Orange Juice</name>
+            <description>Fresh squeezed OJ</description>
+            <price>$1.99</price>
+        </item>
+    </menu>
+    <menu category="dinner">
+        <item category="entree">
+            <name>Chicken Salad</name>
+            <description>A salad with chicken</description>
+            <price>$10.99</price>
+        </item>
+        <item category="entree">
+            <name>Chicken Sandwich</name>
+            <description>A sandwich with chicken</description>
+            <price>$12.99</price>
+        </item>
+        <item category="entree">
+            <name>Pastrami Sandwich</name>
+            <description>A sandwich made with pastrami</description>
+            <price>$13.99</price>
+        </item>
+        <item category="beverage">
+            <name>Coca-Cola</name>
+            <description>A fizzy cola soda</description>
+            <price>$0.99</price>
+        </item>
+    </menu>
+</restaurantMenu>
