@@ -54,8 +54,10 @@
 			<% } %>
 			<!-- This determines what to display based on the result in session -->
 			<form method="post" action="/GreatNumberGame/play">
-			<input type="text" name="guess"><br>
-			<input type="submit">
+			<% if(reslt == null || reslt != "Correct! Play Again?") { %>
+				<input type="text" name="guess"><br>
+				<input type="submit">
+			<% } %>
 			</form>
 		</div>
 	
