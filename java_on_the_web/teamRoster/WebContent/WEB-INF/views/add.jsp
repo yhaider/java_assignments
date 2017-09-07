@@ -10,7 +10,7 @@
 	<body>
 		<div class="container">
 			<h3>Add a Player</h3>
-			<form method="post" action="">
+			<form method="post" action="/TeamRoster/add?id=<%= request.getParameter("id") %>">
 				<label>
 				First Name:<br>
 				<input type="text" name="fname"><br>
@@ -23,6 +23,7 @@
 				Age:<br>
 				<input type="text" name="age"><br>
 				</label>
+				<input type="submit">
 			</form>
 		</div>
 	</body>

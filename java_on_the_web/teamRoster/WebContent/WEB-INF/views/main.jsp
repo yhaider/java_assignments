@@ -13,7 +13,7 @@
 		<div class="container">
 			<div class="head">
 			<h3>All Teams</h3>
-			<a href="">New Team</a>
+			<a href="/TeamRoster/teams">New Team</a>
 			</div>
 			<table>
 				<tr>
@@ -26,7 +26,7 @@
 					<tr>
 						<td><%= team.getName() %></td>
 						<td><%= team.getNum() %></td>
-						<td><a>Details</a> <a>Delete</a></td>
+						<td><a href="/TeamRoster/teams?id=<%= team.getId() %>">Details</a> <a href="/TeamRoster/main?id=<%= team.getId() %>">Delete</a></td>
 					</tr>
 				<% } %>
 			</table>

@@ -27,7 +27,9 @@ public class Team {
 		this.setId(newid);
 		newid++;
 	}
-	// Constructors for the Team class
+	// Constructors for the Team class,
+	// we have to set a new id for each team,
+	// and add it to our overall array of teams
 	
 	public String getName() {
 		return name;
@@ -58,6 +60,18 @@ public class Team {
 		this.setNum(this.getNum()+1);
 	}
 	// Adding a new player to the team
+	
+	public void removePlayer(Integer id) {
+		for(int i = 0; i < this.team.size(); i++) {
+			Player p = this.team.get(i);
+			if(p.getId() == id) {
+				this.team.remove(i);
+				this.setNum(this.getNum()-1);
+			}
+		}
+	}
+	// Removes a player from the team by iterating through and
+	// finding a player with matching id to the id passed in
 	
 	public static ArrayList<Team> getAllteams() {
 		return allteams;
