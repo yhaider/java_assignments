@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>Team Roster</display-name>
+  <description>The team roster application</description>
+  <servlet>
+    <servlet-name>Main</servlet-name>
+    <servlet-class>com.yasmeen.tr.controllers.Main</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Main</servlet-name>
+    <url-pattern>/main</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>Team</servlet-name>
+    <servlet-class>com.yasmeen.tr.controllers.Team</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Team</servlet-name>
+    <url-pattern>/team</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>Add</servlet-name>
+    <servlet-class>com.yasmeen.tr.controllers.Add</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Add</servlet-name>
+    <url-pattern>/add</url-pattern>
+  </servlet-mapping>
+</web-app>
