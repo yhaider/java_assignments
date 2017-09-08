@@ -46,7 +46,7 @@
 			<fieldset>
 			<legend>Date</legend>
 			<c:set var = "now" value = "${date}" />
-			<p>Today is: <fmt:formatDate pattern = "EEEEEE" value = "${now}"/>, the <fmt:formatDate pattern = "dd" value = "${now}"/> of <fmt:formatDate pattern = "MMMM" value = "${now}" />, <fmt:formatDate pattern = "yyyy" value = "${now}" /></p>
+			<p>Today is: <fmt:formatDate pattern = "EEEEEE, 'the' dd 'of' MMMM, yyyy"  value = "${now}"/></p>
 			<a href="/">Back</a>
 			</fieldset>
 		</div>
