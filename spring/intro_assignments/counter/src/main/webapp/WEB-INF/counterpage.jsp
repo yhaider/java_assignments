@@ -36,7 +36,8 @@
 			padding-bottom: 20px;
 		}
 		.container a{
-			margin-left: 260px;
+			margin-left: 100px;
+			margin-right: 100px;
 			font: 100 8pt "Helvetica Neue", sans-serif;
 		}
 	</style>
@@ -47,7 +48,7 @@
 			<legend>Counter</legend>
 			<% Integer count = (Integer) session.getAttribute("count"); %>
 			<p>You've navigated to the home page <c:out value="${count}"/> times.</p>
-			<a href="/">Back</a>
+			<a href="/reset">Reset</a><a href="/two">+2</a><a href="/">Back</a>
 			</fieldset>
 		</div>
 	</body>
