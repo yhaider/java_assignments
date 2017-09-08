@@ -1,0 +1,1 @@
+alert("This alert is the work of my JavaScript file!");
