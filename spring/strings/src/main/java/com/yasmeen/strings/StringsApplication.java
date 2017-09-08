@@ -1,0 +1,27 @@
+package com.yasmeen.strings;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@SpringBootApplication
+@RestController
+public class StringsApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(StringsApplication.class, args);
+	}
+	
+	@RequestMapping("/")
+	public String hello() {
+		return "Hello client! How are you doing?";
+	}
+	// This is the first route the assignment wants us to do
+	
+	@RequestMapping("/random")
+	public String random() {
+		return "Wow! I just used request mapping to do this very basic thing!";
+	}
+	// This is the second route for the assignment
+}
