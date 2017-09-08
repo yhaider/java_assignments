@@ -1,0 +1,21 @@
+.projects{
+	margin: auto;
+	text-align: center;
+	margin-top: 50px;
+	width: 300px;
+	border: 1px solid #C71585;
+	color: #C71585;
+	padding: 20px;
+}
+*{
+	font: inherit;
+	margin: 0px;
+	padding: 0px;
+}
+h3{
+	font: 100 30pt "Helvetica Neue", sans-serif;
+}
+
+a{
+	font: 100 10pt "Helvetica Neue", sans-serif;
+}
