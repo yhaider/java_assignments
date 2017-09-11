@@ -21,10 +21,10 @@ public class LanguageServices {
 		this.languageRepository = languageRepository;
 	}
 
-	private List<Language> languages = new ArrayList<Language>(Arrays.asList(
-			new Language("Java", "James Gosling", "1.8"),
-			new Language("JavaScript", "Brendan Eich", "1.9.5.23.247.2"),
-			new Language("Python", "Guido von Rossum", "3.6")));
+//	private List<Language> languages = new ArrayList<Language>(Arrays.asList(
+//			new Language("Java", "James Gosling", "1.8"),
+//			new Language("JavaScript", "Brendan Eich", "1.9.5.23.247.2"),
+//			new Language("Python", "Guido von Rossum", "3.6")));
 	// This is our array list of languages initially
 	
 	
