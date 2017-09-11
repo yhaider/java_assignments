@@ -1,5 +1,8 @@
 package com.yasmeen.lookify.services;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
@@ -43,4 +46,16 @@ public class LookifyService {
 	}
 	// This deletes a song from the database
 	// based on the id
+	
+	public List<Song> topTen(){
+		ArrayList<Song> songs = (ArrayList<Song>) lookifyRepository.findAll();
+		Collections.sort(songs, Comparator.comparingInt(Song::getRating));
+		for(int i = 0; i < songs.size(); i++) {
+			if(i > 9) {
+				songs.remove(i);
+			}
+		}
+		return songs;
+	}
+	// This grabs the top ten songs 
 }

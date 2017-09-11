@@ -13,13 +13,30 @@
 			padding: 0px;
 			font: inherit;
 		}
-		
+		.form{
+			margin-top: 20px;
+			margin-left: 200px;
+			font: 100 15pt "Helvetica Neue", sans-serif;
+		}
+		h4{
+			font: 100 20pt "Helvetica Neue", sans-serif;
+		}
+		button{
+			font: 100 10pt "Helvetica Neue", sans-serif;
+			padding: 3px 7px 3px 7px;
+			margin-top: 10px;
+		}
+		a{
+			font: 100 10pt "Helvetica Neue", sans-serif;
+			text-decoration: none;
+		}
 	</style>
   </head>
   <body>
   		<div class="form">
     		<form:form method="POST" action="/add" modelAttribute="song">
     			<h4>Add a Song</h4>
+    			<a href="/dash">Back</a><br>
     			<form:label path="title">Title:
 		    <form:errors path="title"/><br>
 		    <form:input type = "text" path="title"/></form:label><br>
@@ -30,13 +47,13 @@
 		    
 		    <form:label path="rating">Rating:
 		    <form:errors path="rating"/>
-		    <form:select>
+		    <form:select path="rating">
 		    		<% for(int i = 1; i <= 10; i++) { %>
-		    			<form:option><%= i %></form:option>
+		    			<form:option value="<%=i %>"><%= i %></form:option>
 		    		<% } %>
 		    </form:select></form:label><br>
 		    
-		    <button type=submit>Submit</button>
+		    <button type=submit>Add</button>
     		</form:form>
   	</div>
   </body>

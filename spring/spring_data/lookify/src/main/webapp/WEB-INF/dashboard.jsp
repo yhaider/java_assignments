@@ -6,7 +6,7 @@
 <html>
 	<head>
     <meta charset="utf-8">
-    <title>Lookify Dashboard</title>
+    <title>Lookify: Dashboard</title>
 	<style>
 		*{
 			margin: 0px;
@@ -56,7 +56,7 @@
 	  		<h3>Lookify: Dashboard</h3>
 	  		<a href="/add">Add Song</a> || <a href="/top">Top Songs</a> 
 	  		<form method="POST" action="/search">
-	  		Search: <input type="text"> <button type="submit">Search</button>
+	  		Search: <input type="text"> <button type="submit">Search</button><a href="/reset"><button>Reset</button></a>
 	  		</form>
   		</div>
   		<div class="body">
