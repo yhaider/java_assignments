@@ -29,6 +29,7 @@
 		button{
 			font: 100 10pt "Helvetica Neue", sans-serif;
 			padding: 5px 10px 5px 10px;
+			margin-top: 10px;
 		}
 		.red{
 			color: red;

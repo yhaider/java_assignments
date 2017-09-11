@@ -23,7 +23,7 @@ public class MainController {
 	@RequestMapping(path="process", method=RequestMethod.POST)
 	public String processpass(@RequestParam(value="code") String code, HttpSession session) {
 		String pass = "bushido";
-		if(code == pass) {
+		if(code.equals(pass)) {
 			session.setAttribute("res", null);
 			return "redirect:/success";
 		}
@@ -32,7 +32,6 @@ public class MainController {
 			return "redirect:/";	
 		}
 	}
-	// This is currently not working**
 	// Takes the code inputed, compares it to the actual code
 	// and if it is correct, redirects to success or if it isn't
 	// it redirects to the main page with an error
@@ -41,5 +40,5 @@ public class MainController {
 	public String successful() {
 		return "success.jsp";
 	}
-	// This should just display the success page
+	// This should just display the success paget
 }
