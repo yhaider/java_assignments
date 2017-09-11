@@ -20,7 +20,7 @@ import com.yasmeen.grouplanguages.services.LanguageServices;
 // Note: if at any time, you do not quite understand my logic
 // please take a peek at my corresponding JSP files (in webapp/WEB-INF)
 // since there tends to be a slight bit of logic in those
-// Another Note: this is not attached to a database!
+
 
 @Controller
 @RequestMapping("/")
@@ -63,7 +63,7 @@ public class LanguageController {
 	// a new language and then redirects to home
 	
 	@RequestMapping("languages/{id}")
-	public String displayOne(@PathVariable int id, Model model) {
+	public String displayOne(@PathVariable Long id, Model model) {
 		Language lang = langService.getLang(id);
 		if(lang == null) {
 			return "redirect:/";
@@ -76,7 +76,7 @@ public class LanguageController {
 	// and stores the information and displays it on our JSP
 	
 	@RequestMapping(path="languages/update/{id}", method=RequestMethod.GET)
-	public String editPage(@PathVariable int id, Model model, @ModelAttribute("language") Language language) {
+	public String editPage(@PathVariable Long id, Model model, @ModelAttribute("language") Language language) {
 		Language l = langService.getLang(id);
 		model.addAttribute("lang", l);
 		return "editForm.jsp";
@@ -97,7 +97,7 @@ public class LanguageController {
 	// This submits the changes and then redirects to our home page
 	
 	@RequestMapping("languages/delete/{id}")
-	public String deleteLang(@PathVariable int id) {
+	public String deleteLang(@PathVariable Long id) {
 		langService.deleteLang(id);
 		return "redirect:/";
 	}
