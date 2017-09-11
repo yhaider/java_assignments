@@ -20,6 +20,7 @@ import com.yasmeen.grouplanguages.services.LanguageServices;
 // Note: if at any time, you do not quite understand my logic
 // please take a peek at my corresponding JSP files (in webapp/WEB-INF)
 // since there tends to be a slight bit of logic in those
+// Another Note: this is not attached to a database!
 
 @Controller
 @RequestMapping("/")
