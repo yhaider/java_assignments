@@ -32,7 +32,7 @@
   	<div class="all">
   		<h1>Welcome to Lookify!</h1>
   		<p>♫</p>
-  		<a href="/dashboard">Start looking</a>
+  		<a href="/dash">Start looking</a>
   	</div>
   </body>
 </html>
