@@ -73,8 +73,9 @@
 		    <form:errors path="expiration_date"/><br>
 		    <form:input type="date" path="expiration_date"/></form:label><br>
 		    
-		    <button type=submit>Submit</button> <a href="/"><button>Back</button></a>
+		    <button type=submit>Submit</button> 
     		</form:form>
+    		<a href="/">Back</a>
     </div>
     <div class="errs">
     		<% if(request.getAttribute("errs") != null) { %>

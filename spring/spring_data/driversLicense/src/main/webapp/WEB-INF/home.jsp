@@ -16,12 +16,13 @@
 		.all{
 			margin: auto;
 			text-align: center;	
+			font: 100 20pt "Helvetica Neue", sans-serif;
 		}
 		h1{
 			font: 100 60pt "Helvetica Neue", sans-serif;
 		}
 		b{
-			font: 100 10pt "Helvetica Neue", sans-serif;
+			font: 100 20pt "Helvetica Neue", sans-serif;
 			margin-top: 40px;
 		}
 		a{
