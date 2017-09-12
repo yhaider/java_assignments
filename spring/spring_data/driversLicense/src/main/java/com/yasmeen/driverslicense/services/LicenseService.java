@@ -1,6 +1,10 @@
 package com.yasmeen.driverslicense.services;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
 
 import org.springframework.stereotype.Service;
 
@@ -28,7 +32,18 @@ public class LicenseService {
 		// Grabbing one by its id
 		
 		public String generateNum() {
-			return String.format("%06d", this.getAll().size()+1);
+			ArrayList<License> licenses = this.getAll();
+			String num = String.format("%06d", this.getAll().size()+1);
+			Collections.sort(licenses, Comparator.comparing(License::getNumber));
+			for(int i = 0; i < licenses.size(); i++) {
+				License l = licenses.get(i);
+				if(l.getNumber().equals(num)) {
+					String add = "";
+					int newnum = 1 + i;
+					num = String.format("%06d", this.getAll().size()+newnum);
+				}
+			}
+			return num;
 		}
 		// Generating a new number for the license
 		// This method is called when we are creating a license
