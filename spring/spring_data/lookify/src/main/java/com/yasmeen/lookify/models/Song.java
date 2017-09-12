@@ -8,7 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
-import javax.validation.constraints.Min;
+import javax.validation.constraints.Size;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -20,11 +20,11 @@ public class Song {
 	private Long id;
 	
 	@Column
-	@Min(5)
+	@Size(min=5, max=45)
 	private String title;
 	
 	@Column
-	@Min(5)
+	@Size(min=5, max=45)
 	private String artist;
 	
 	@Column

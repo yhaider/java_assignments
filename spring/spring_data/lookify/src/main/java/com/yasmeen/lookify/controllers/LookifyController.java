@@ -40,7 +40,6 @@ public class LookifyController {
 	public String displayDash(Model model, HttpSession session) {
 		List<Song> songs = lookifyService.getAll();
 		if(session.getAttribute("searchitem") != null) {
-			String search = (String) session.getAttribute("searchitem");
 			List<Song> searchsongs = new ArrayList<Song>();
 			for(int i = 0; i< songs.size(); i++) {
 				Song song = songs.get(i);
@@ -64,9 +63,10 @@ public class LookifyController {
 	}
 	// This GET request to "/add" will display the form to add a song
 	
-	@PostMapping("/add")
+	@PostMapping("/addsong")
 	public String addSong(@Valid @ModelAttribute("song") Song song, BindingResult result) {
 		if(result.hasErrors()) {
+			System.out.println(result);
 			return "redirect:/dash";
 		}
 		lookifyService.addSong(song);
@@ -109,5 +109,6 @@ public class LookifyController {
 		model.addAttribute("songs", lookifyService.topTen());
 		return "topTen.jsp";
 	}
-	// Displays the top ten
+	// Displays the top ten by grabbing them from
+	// the Lookify service
 }

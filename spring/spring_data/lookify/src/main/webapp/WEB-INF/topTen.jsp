@@ -17,9 +17,13 @@
 			margin-top: 20px;
 			margin-left: 200px;
 		}
+		h3{
+			font: 100 20pt "Helvetica Neue", sans-serif;
+			margin-bottom: 10px;
+		}
 		a{
 			text-decoration: none;
-			font: 100 10pt "Helvetica Neue", sans-serif;
+			font: 100 15pt "Helvetica Neue", sans-serif;
 			margin-bottom: 10px;
 		}
 		p{
@@ -28,15 +32,17 @@
 		i{
 			color: grey;
 		}
-		
+		.small{
+			font: 100 10pt "Helvetica Neue", sans-serif;
+		}
 	</style>
   </head>
   <body>
   	<div class="all">
-  		<a href="/dash">Dashboard</a>
+  		<a href="/dash" class="small">Dashboard</a>
   		<h3>Top Ten Songs</h3>
   		<c:forEach items="${songs}" var="song">
-			<p> <c:out value="${song.rating}" /> - <a href="/songs/${song.id}"><c:out value="${song.name}"/></a> - <c:out value="${song.artist}"/> </p>
+			<p> <c:out value="${song.rating}" /> - <a href="/songs/${song.id}"><c:out value="${song.title}"/></a> - <c:out value="${song.artist}"/> </p>
 		</c:forEach>
   	</div>
   </body>

@@ -20,20 +20,22 @@
 		a{
 			text-decoration: none;
 			font: 100 10pt "Helvetica Neue", sans-serif;
-			margin-bottom: 10px;
 		}
 		p{
 			font: 100 15pt "Helvetica Neue", sans-serif;
+			padding: 5px;
 		}
 		i{
 			color: grey;
 		}
-		
+		.space{
+			padding-bottom: 10px;
+		}
 	</style>
   </head>
   <body>
   	<div class="all">
-  		<a href="/dash">Dashboard</a>
+  		<a href="/dash" class="space">Dashboard</a><br>
   		<p>Title: <i><c:out value="${song.title}"/></i></p>
   		<p>Artist: <i><c:out value="${song.artist}"/></i></p>
   		<p>Rating: <i><c:out value="${song.rating}"/></i></p>

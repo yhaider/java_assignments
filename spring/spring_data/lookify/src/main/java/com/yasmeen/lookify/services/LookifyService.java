@@ -49,7 +49,7 @@ public class LookifyService {
 	
 	public List<Song> topTen(){
 		ArrayList<Song> songs = (ArrayList<Song>) lookifyRepository.findAll();
-		Collections.sort(songs, Comparator.comparingInt(Song::getRating));
+		Collections.sort(songs, Comparator.comparingInt(Song::getRating).reversed());
 		for(int i = 0; i < songs.size(); i++) {
 			if(i > 9) {
 				songs.remove(i);

@@ -34,7 +34,7 @@
   </head>
   <body>
   		<div class="form">
-    		<form:form method="POST" action="/add" modelAttribute="song">
+    		<form:form method="POST" action="/addsong" modelAttribute="song">
     			<h4>Add a Song</h4>
     			<a href="/dash">Back</a><br>
     			<form:label path="title">Title:
@@ -53,7 +53,7 @@
 		    		<% } %>
 		    </form:select></form:label><br>
 		    
-		    <button type=submit>Add</button>
+		    <button type="submit">Add</button>
     		</form:form>
   	</div>
   </body>
