@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import org.springframework.format.annotation.DateTimeFormat;
@@ -20,14 +21,15 @@ public class Song {
 	private Long id;
 	
 	@Column
-	@Size(min=5, max=45)
+	@Size(min=2, message="Title should be at least 2 characters.")
 	private String title;
 	
 	@Column
-	@Size(min=5, max=45)
+	@Size(min=2, message="Artist name should be at least 2 characters.")
 	private String artist;
 	
 	@Column
+	@NotNull(message="Rating must be filled and between 1 and 10.")
 	private Integer rating;
 	
 	@Column

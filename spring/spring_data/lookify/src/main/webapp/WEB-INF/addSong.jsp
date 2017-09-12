@@ -30,11 +30,25 @@
 			font: 100 10pt "Helvetica Neue", sans-serif;
 			text-decoration: none;
 		}
+		.errs{
+			margin-top: 20px;
+			margin-left: 200px;
+			width: 300px;
+		}
+		legend{
+			font: 100 15pt "Helvetica Neue", sans-serif;
+			margin-left: 10px;
+		}
+		.errs p{
+			font: 100 10pt "Helvetica Neue", sans-serif;
+			margin-left: 10px;
+			padding: 10px;
+		}
 	</style>
   </head>
   <body>
   		<div class="form">
-    		<form:form method="POST" action="/addsong" modelAttribute="song">
+    		<form:form method="POST" action="/add" modelAttribute="song">
     			<h4>Add a Song</h4>
     			<a href="/dash">Back</a><br>
     			<form:label path="title">Title:
@@ -55,6 +69,16 @@
 		    
 		    <button type="submit">Add</button>
     		</form:form>
+  	</div>
+  	<div class="errs">
+  		<% if(request.getAttribute("errs") != null) { %>
+	  	<fieldset>
+	  		<legend>Errors</legend>
+	  		<c:forEach items="${errs}" var="err">
+				<p><c:out value="${err.getDefaultMessage()}"/></p>
+			</c:forEach>
+	  	</fieldset>
+	  	<% } %>
   	</div>
   </body>
 </html>

@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.yasmeen.lookify.models.Song;
 import com.yasmeen.lookify.services.LookifyService;
@@ -63,11 +64,11 @@ public class LookifyController {
 	}
 	// This GET request to "/add" will display the form to add a song
 	
-	@PostMapping("/addsong")
-	public String addSong(@Valid @ModelAttribute("song") Song song, BindingResult result) {
+	@PostMapping("/add")
+	public String addSong(@Valid @ModelAttribute("song") Song song, BindingResult result, RedirectAttributes flash) {
 		if(result.hasErrors()) {
-			System.out.println(result);
-			return "redirect:/dash";
+			flash.addFlashAttribute("errs",result.getAllErrors());
+			return "redirect:/add";
 		}
 		lookifyService.addSong(song);
 		return "redirect:/dash";
