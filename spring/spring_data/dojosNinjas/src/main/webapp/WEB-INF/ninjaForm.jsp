@@ -65,7 +65,7 @@
 		    <form:errors path="first_name"/><br>
 		    <form:input type="text" path="first_name"/></form:label><br>
 		    
-		    <form:label path="las_name">Last Name:
+		    <form:label path="last_name">Last Name:
 		    <form:errors path="last_name"/><br>
 		    <form:input type="text" path="last_name"/></form:label><br>
 		    

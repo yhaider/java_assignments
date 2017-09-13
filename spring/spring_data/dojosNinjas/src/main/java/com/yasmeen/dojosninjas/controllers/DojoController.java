@@ -60,7 +60,8 @@ public class DojoController {
 	public String displayDojo(@PathVariable Long id, Model model) {
 		Dojo dojo = dojoService.getOneById(id);
 		model.addAttribute("dojo", dojo);
-		model.addAttribute("ninjas", dojoService.getNinjasByDojoId(id));
+		model.addAttribute("ninjas", dojo.getNinjas());
 		return "singleDojo.jsp";
 	}
+	// Displays one dojo
 }

@@ -27,17 +27,20 @@ public class NinjaController {
 	public NinjaController(NinjaService ninjaService) {
 		this.ninjaService = ninjaService;
 	}
+	// Setting up our services
 
 	@RequestMapping("")
 	public String redirectToHome() {
 		return "redirect:/";
 	}
+	// Redirects them to home
 	
 	@RequestMapping("new")
 	public String displayForm(@ModelAttribute("ninja") Ninja ninja, Model model) {
 		model.addAttribute("dojos", dojoService.getAll());
 		return "ninjaForm.jsp";
 	}
+	// Displays the form for adding a ninja
 	
 	@PostMapping("new")
 	public String createNinja(@Valid @ModelAttribute("ninja") Ninja ninja, 
@@ -50,4 +53,5 @@ public class NinjaController {
 		ninjaService.createNinja(ninja);
 		return "redirect:/dojos/" + ninja.getDojo().getId();
 	}
+	// Creates a ninja
 }

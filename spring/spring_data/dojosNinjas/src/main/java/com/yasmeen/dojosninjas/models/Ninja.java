@@ -10,10 +10,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
-import javax.persistence.Table;
 
 @Entity
-@Table(name="ninjas")
 public class Ninja {
 
     @Id
@@ -29,6 +27,8 @@ public class Ninja {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="dojo_id")
     private Dojo dojo;
+    
+   
     // All attributes for ninja with the
     // one to many relationship
     

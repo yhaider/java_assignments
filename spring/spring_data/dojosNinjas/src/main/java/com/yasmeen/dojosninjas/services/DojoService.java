@@ -44,8 +44,4 @@ public class DojoService {
 	}
 	// Delete a dojo by id
 	
-	public ArrayList<Ninja> getNinjasByDojoId(Long id){
-		Dojo dojo = this.getOneById(id);
-		return (ArrayList<Ninja>) dojo.getNinjas();
-	}
 }

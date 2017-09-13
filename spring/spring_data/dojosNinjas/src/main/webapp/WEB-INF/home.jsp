@@ -5,7 +5,7 @@
 <html>
 	<head>
     <meta charset="utf-8">
-    <title>Driver's License</title>
+    <title>Dojos and Ninjas</title>
 	<style>
 		*{
 			margin: 0px;
@@ -53,7 +53,7 @@
   			<h3>All Dojos</h3>
   			<c:forEach items="${dojos}" var="dojo">
   				<div class="dojo">
-  					<a href="/dojos/${dojo.name}"><h4>▻ <c:out value="${dojo.name}"/></h4></a>
+  					<a href="/dojos/${dojo.id}"><h4>▻ <c:out value="${dojo.name}"/></h4></a>
   				</div>
 			</c:forEach>
   		</div>
