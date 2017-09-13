@@ -2,14 +2,17 @@ package com.yasmeen.dojosninjas.services;
 
 import java.util.ArrayList;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.yasmeen.dojosninjas.models.Dojo;
+import com.yasmeen.dojosninjas.models.Ninja;
 import com.yasmeen.dojosninjas.repositories.DojoRepository;
 
 @Service
 public class DojoService {
 	
+	@Autowired
 	private DojoRepository dojoRepository;
 	public DojoService(DojoRepository dojoRepository) {
 		this.dojoRepository = dojoRepository;
@@ -40,4 +43,9 @@ public class DojoService {
 		dojoRepository.delete(id);
 	}
 	// Delete a dojo by id
+	
+	public ArrayList<Ninja> getNinjasByDojoId(Long id){
+		Dojo dojo = this.getOneById(id);
+		return (ArrayList<Ninja>) dojo.getNinjas();
+	}
 }

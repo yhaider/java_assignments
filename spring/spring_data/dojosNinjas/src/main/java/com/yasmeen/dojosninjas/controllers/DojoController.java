@@ -4,10 +4,12 @@ import java.util.ArrayList;
 
 import javax.validation.Valid;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
@@ -20,6 +22,7 @@ import com.yasmeen.dojosninjas.services.DojoService;
 @RequestMapping("/")
 public class DojoController {
 
+	@Autowired
 	private DojoService dojoService;
 	public DojoController(DojoService dojoService) {
 		this.dojoService = dojoService;
@@ -52,4 +55,12 @@ public class DojoController {
 		return "redirect:/";	
 	}
 	// Creating a new dojo
+	
+	@RequestMapping("dojos/{id}")
+	public String displayDojo(@PathVariable Long id, Model model) {
+		Dojo dojo = dojoService.getOneById(id);
+		model.addAttribute("dojo", dojo);
+		model.addAttribute("ninjas", dojoService.getNinjasByDojoId(id));
+		return "singleDojo.jsp";
+	}
 }

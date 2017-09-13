@@ -9,7 +9,7 @@
 <html>
 	<head>
     <meta charset="utf-8">
-    <title>Dojo: New</title>
+    <title>Ninja: New</title>
 	<style>
 		*{
 			margin: 0px;
@@ -51,11 +51,27 @@
   </head>
   <body>
     <div class="form">
-    		<form:form method="POST" action="/dojos/new" modelAttribute="dojo">
-    			<h4>Create Dojo</h4>
-    			<form:label path="name">Dojo Name:
-		    <form:errors path="name"/><br>
-		    <form:input type="text" path="name"/></form:label><br>
+    		<form:form method="POST" action="/ninjas/new" modelAttribute="ninja">
+    			<h4>Create Ninja</h4>
+    			<form:label path="dojo">Dojo Name:
+		    <form:errors path="dojo"/><br>
+		    <form:select path="dojo">
+		    		<c:forEach items="${dojos}" var="dojo">
+					<form:option value="${dojo.id}">${dojo.name}</form:option>
+				</c:forEach>
+		    </form:select></form:label><br>
+		    
+		    <form:label path="first_name">First Name:
+		    <form:errors path="first_name"/><br>
+		    <form:input type="text" path="first_name"/></form:label><br>
+		    
+		    <form:label path="las_name">Last Name:
+		    <form:errors path="last_name"/><br>
+		    <form:input type="text" path="last_name"/></form:label><br>
+		    
+		    <form:label path="age">Age:
+		    <form:errors path="age"/><br>
+		    <form:input type="number" path="age"/></form:label><br>
 		    
 		    <button type=submit>Submit</button> 
     		</form:form>

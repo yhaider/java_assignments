@@ -19,9 +19,11 @@ public class Dojo {
     @Id
     @GeneratedValue
     private Long id;
+    
     private String name;
     private Date created_at;
     private Date updated_at;
+    
     @OneToMany(mappedBy="dojo", fetch = FetchType.LAZY)
     private List<Ninja> ninjas;
     // Attributes for dojo along with the connection of

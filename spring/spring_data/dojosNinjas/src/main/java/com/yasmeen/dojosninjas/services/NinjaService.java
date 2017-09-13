@@ -2,6 +2,7 @@ package com.yasmeen.dojosninjas.services;
 
 import java.util.ArrayList;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.yasmeen.dojosninjas.models.Ninja;
@@ -10,6 +11,7 @@ import com.yasmeen.dojosninjas.repositories.NinjaRepository;
 @Service
 public class NinjaService {
 
+	@Autowired
 	private NinjaRepository ninjaRepository;
 	public NinjaService(NinjaRepository ninjaRepository) {
 		this.ninjaRepository = ninjaRepository;
