@@ -16,11 +16,13 @@ public class ProductCategoryController {
 	public ProductCategoryController(ProductService ps) {
 		this.productService = ps;
 	}
+	// Getting the product service
 	
 	@RequestMapping("")
 	public String toHome(Model model) {
 		model.addAttribute("products", productService.getAll());
 		return "home.jsp";
 	}
+	// This would just display the home page
 
 }
