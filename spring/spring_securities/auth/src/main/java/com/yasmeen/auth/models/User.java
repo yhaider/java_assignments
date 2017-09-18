@@ -16,6 +16,8 @@ import javax.persistence.PreUpdate;
 import javax.persistence.Transient;
 import javax.validation.constraints.Size;
 
+import org.hibernate.annotations.Type;
+
 @Entity
 public class User {
     
@@ -23,18 +25,20 @@ public class User {
     @GeneratedValue
     private Long id;
     
-    @Size(min=6)
+    @Size(min=8)
     private String email;
     
-    @Size(min=1)
+    @Size(min=1, max=64)
     private String first_name;
-    @Size(min=1)
+    @Size(min=1, max=64)
     private String last_name;
     
-    @Size(min=5)
+    @Size(min=10)
+    @Type(type="text")
     private String password;
     
     @Transient
+    @Size(min=10)
     private String passwordConfirmation;
     
     private Date createdAt;

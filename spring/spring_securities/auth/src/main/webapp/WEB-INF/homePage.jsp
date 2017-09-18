@@ -14,8 +14,8 @@
     <p><b>First Name: </b> <c:out value="${currentUser.first_name}"></c:out></p>
     <p><b>Last Name: </b> <c:out value="${currentUser.last_name}"></c:out></p>
     <p><b>Email: </b> <c:out value="${currentUser.email}"></c:out></p>
-    <p><b>Sign Up: </b> <fmt:formatDate pattern = "EEEEEE, 'the' dd 'of' MMMM, yyyy"  value = "${currentUser.createdAt}"/></p>
-    <p><b>Last Sign On: </b> <fmt:formatDate pattern = "EEEEEE, 'the' dd 'of' MMMM, yyyy"  value = "${currentUser.createdAt}"/></p>
+    <p><b>Sign Up: </b> <fmt:formatDate pattern = "EEEEEE, 'the' dd 'of' MMMM, yyyy: hh:mm a"  value="${currentUser.updatedAt}"/></p>
+    <p><b>Last Sign On: </b> <fmt:formatDate pattern = "EEEEEE, 'the' dd 'of' MMMM, yyyy: hh:mm a"  value="${currentUser.createdAt}"/></p>
     
     <form id="logoutForm" method="POST" action="/logout">
         <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>

@@ -1,5 +1,7 @@
 package com.yasmeen.auth.services;
 
+import java.util.Date;
+
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -37,5 +39,10 @@ public class UserService {
     // 3
     public User findByEmail(String email) {
         return userRepository.findByEmail(email);
+    }
+    
+    public void updateUser(User user){ 
+    	user.setUpdatedAt(new Date());
+    	userRepository.save(user);
     }
 }

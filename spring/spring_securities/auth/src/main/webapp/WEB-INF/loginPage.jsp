@@ -19,11 +19,11 @@
     </c:if>
     <form method="POST" action="/login">
         <p>
-            <label for="email">Email</label>
-            <input type="text" id="email" name="email"/>
+            <label for="username">Email: </label>
+            <input type="text" id="username" name="username"/>
         </p>
         <p>
-            <label for="password">Password</label>
+            <label for="password">Password: </label>
             <input type="password" id="password" name="password"/>
         </p>
         <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
