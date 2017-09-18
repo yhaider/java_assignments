@@ -38,10 +38,10 @@ public class UserController {
         if (result.hasErrors()) {
             return "registrationPage.jsp";
         }
-        userService.saveWithUserRole(user);
+        userService.saveUserWithAdminRole(user);
         return "redirect:/login";
     }
-    // If there are no errors, it redirects to the login
+    // If there are no errors, it redirects to the login, saves user with an admin role
     
     @RequestMapping("/login")
     public String login(@RequestParam(value="error", required=false) String error, @RequestParam(value="logout", required=false) String logout, Model model) {
@@ -66,4 +66,11 @@ public class UserController {
     }
     // This displays the home page
     
+    @RequestMapping("/admin")
+    public String adminPage(Principal principal, Model model) {
+        String email = principal.getName();
+        model.addAttribute("currentUser", userService.findByEmail(email));
+        return "adminPage.jsp";
+    }
+    // With authorization, a user who is an admin can access this
 }
