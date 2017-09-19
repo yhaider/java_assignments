@@ -1,5 +1,6 @@
 package com.yasmeen.admindashboard.services;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
@@ -26,13 +27,13 @@ public class UserService {
     
     public void saveWithUserRole(User user) {
         user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
-        user.setRoles(roleRepository.findByName("ROLE_USER"));
+        user.setRoles(Arrays.asList(roleRepository.findByName("ROLE_USER")));
         userRepository.save(user);
     }
      
     public void saveUserWithAdminRole(User user) {
         user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
-        user.setRoles(roleRepository.findByName("ROLE_ADMIN"));
+        user.setRoles(Arrays.asList(roleRepository.findByName("ROLE_ADMIN")));
         userRepository.save(user);
     }    
     
@@ -49,10 +50,18 @@ public class UserService {
     		userRepository.save(user);
     }
     
+    public User getUserById(Long id) {
+    		return userRepository.findOne(id);
+    }
+    
+    public void deletebyId(Long id) {
+    		userRepository.delete(id);
+    }
+    
     public boolean checkIfAdmin(User user) {
     		List<Role> roles = user.getRoles();
     		for( int i = 0; i < roles.size(); i++) {
-    			if(roles.get(i).getName() == "ROLE_ADMIN") {
+    			if(roles.get(i).getName().equals("ROLE_ADMIN")) {
     				return true;
     			}
     		}
@@ -63,16 +72,20 @@ public class UserService {
     		return (List<User>) userRepository.findAll();
     }
     
-    public boolean CheckIfOverallAdmin() {
-    		List<User> users = this.getAll();
-    		for( int i = 0; i < users.size(); i++) {
-    			User user = users.get(i);
-    			for( int y = 0; y < user.getRoles().size(); y++) {
-    				if(user.getRoles().get(y).getName() == "ROLE_ADMIN") {
-    					return true;
-    				}
-    			}
-    		}
-    		return false;
+//    public boolean CheckIfOverallAdmin() {
+//    		List<User> users = this.getAll();
+//    		for( int i = 0; i < users.size(); i++) {
+//    			User user = users.get(i);
+//    			for(int y = 0; y < user.getRoles().size(); y++) {
+//    				if(user.getRoles().get(y).getName() == "ROLE_ADMIN") {
+//    					return true;
+//    				}
+//    			}
+//    		}
+//    		return false;
+//    }
+    
+    public void deleteUser(Long id) {
+    		userRepository.delete(id);
     }
 }

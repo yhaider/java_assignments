@@ -29,11 +29,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http.
             authorizeRequests()
                 .antMatchers("/static/**", "/registration", "/login").permitAll() // All are allowed there
-                .antMatchers("/admin/**").access("hasRole('ADMIN')") // 
+                .antMatchers("/admin/**").access("hasRole('ADMIN')") // Only admins
                 .anyRequest().authenticated()
                 .and()
             .formLogin()
-                .loginPage("/")
+            		.defaultSuccessUrl("/dashboard", true)
+                .loginPage("/login")
                 .permitAll()
                 .and()
             .logout()

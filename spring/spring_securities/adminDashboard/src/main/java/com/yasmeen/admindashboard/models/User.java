@@ -113,7 +113,15 @@ public class User {
 	}
     // Getters and setters
     
-
+	public boolean checkIfAdmin() {
+		List<Role> roles = this.getRoles();
+		for( int i = 0; i < roles.size(); i++) {
+			if(roles.get(i).getName().equals("ROLE_ADMIN")) {
+				return true;
+			}
+		}
+		return false; 			
+}
 
 
 	@PrePersist

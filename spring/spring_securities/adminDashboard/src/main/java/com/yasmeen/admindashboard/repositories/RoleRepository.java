@@ -8,6 +8,6 @@ import com.yasmeen.admindashboard.models.Role;
 
 public interface RoleRepository extends CrudRepository<Role, Long>{
 
-	List<Role> findByName(String string);
+	Role findByName(String string);
 
 }
